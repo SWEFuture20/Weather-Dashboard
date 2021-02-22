@@ -1,6 +1,6 @@
 
 function weatherGenerator(city){
-    var APIKEY = "1b3cfcbab3962e57d2f22e946221f380"
+    var APIKEY = config.MY_KEY;
     var queryURLOne = "http://api.openweathermap.org/data/2.5/forecast?q=Chicago&units=imperial&cnt=5&appid=" + APIKEY;
     var queryURLTwo = ""
     console.log(queryURLOne)
