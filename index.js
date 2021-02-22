@@ -13,7 +13,11 @@ function weatherGenerator(city){
         console.log(response.list[0].main.humidity)
 
         var time = moment().format("MMM Do YY");
+        var timeOne = $("<p>").text(time)
+        var temp = $("<p>").text("Temp:" + response.list[0].main.temp)
+        var humidity =  $("<p>").text("Humidity:" + response.list[0].main.humidity)   
         console.log(time)
+        $(".temp-results").append(timeOne, temp);
 });
 
 }
