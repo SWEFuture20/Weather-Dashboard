@@ -63,6 +63,8 @@ function weatherGenerator(city){
 });
 
 }
+
+
 weatherGenerator();
 
 function timeOne(){

@@ -1,95 +1,118 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Weather Dashboard</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' href='app.css'>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Weather Dashboard</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel='stylesheet' href='app.css'>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 </head>
+
 <body>
   <nav class="navbar navbar-light bg-light">
     <a class="navbar-brand" href="#">Weather Dashboard</a>
   </nav>
-  
-<section class="container">
-  
-<div class="row">
-  <div class="col-sm-4">
-  <div>
-    <h2>Search for a City:</h2>
-  </div>
-  
-    <div class="input-group mx-sm-3 mb-3">
-      <form class="input-group"></form>
-      <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
-      <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
-    </form>
-    </div>
-  
-    <div class="card" style="width: 18rem;">
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">Los Angeles</li>
-        <li class="list-group-item">New York</li>
-        <li class="list-group-item">Chicago</li>
-        <li class="list-group-item">Atlanta</li>
-        <li class="list-group-item">Nashville</li>
-        <li class="list-group-item">Las Vegas</li>
-      </ul>
-    </div>
-  </div>
-  <div class="col-8">
-    <h2>Hello</h2>
-    <section class="jumbotron">
-      <h2>Hello</h2>
-      <div class="container">
-        <h2 class="city"></h2>
-      <div class="Temp">Temperature:</div>
-      <div class="Humidity">Humidity:</div>
-      <div class="Wind-Speed">Wind Speed:</div>
-      <div class="UV-Index">UV Index:</div>
-    </div>
-    </section>
-    <div class="card-columns">
-      <div class="card text-center p-3">
-        <blockquote class="blockquote mb-0">
-          <div class="temp-results-one">
-        </blockquote>
-      </div>
-      <div class="card text-center p-3">
-        <blockquote class="blockquote mb-0">
-          <div class="temp-results-two">
-          </div>
-        </blockquote>
-      </div>
-      <div class="card text-center p-3">
-        <blockquote class="blockquote mb-0">
-          <div class="temp-results-three">
-          </div>
-        </blockquote>
-      </div>
-      <div class="card text-center p-3">
-        <blockquote class="blockquote mb-0">
-          <div class="temp-results-four">
-          </div>
-        </blockquote>
-      </div>
-      <div class="card text-center p-3">
-        <blockquote class="blockquote mb-0">
-          <div class="temp-results-five">
-          </div>
-        </blockquote>
-      </div>
-    </div>
-  </div>
- 
-</div>
 
-</section>
+  <!-- <section class="container"> -->
+
+  <div class="row">
+    <div class="row">
+      <div class="col-sm-4">
+        <div>
+          <h2>Search for a City:</h2>
+        </div>
+
+        <div class="input-group mx-sm-3 mb-3">
+          <form class="input-group" style="width: 18rem;">
+            <input type="text" class="form-control" placeholder="">
+            <button class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
+          </form>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+          <ul class="list-group list-group-flush">
+            <li class="btn list-group-item" type="button">Los Angeles</li>
+            <li class="btn list-group-item" type="button">New York</li>
+            <li class="btn list-group-item" type="button">Chicago</li>
+            <li class="btn list-group-item" type="button">Atlanta</li>
+            <li class="btn list-group-item" type="button">Nashville</li>
+            <li class="btn list-group-item" type="button">Las Vegas</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-8">
+      <br>
+      <section class="jumbotron">
+        <h2>Hello</h2>
+        <div class="container">
+          <h2 class="city"></h2>
+          <div class="Temp">Temperature:</div>
+          <div class="Humidity">Humidity:</div>
+          <div class="Wind-Speed">Wind Speed:</div>
+          <div class="UV-Index">UV Index:</div>
+        </div>
+      </section>
+
+      <div class="card-body">
+        
+          
+
+            <h3>5-Day Forecast:</h3>
+            <div class="row">
+            <div class="col-sm-2">
+            <div class="card text-center p-3">
+              <blockquote class="blockquote mb-0">
+                <div class="temp-results-one">
+              </blockquote>
+            </div>
+          </div>
+          <div class="col-sm-2">
+            <div class="card text-center p-3 ">
+              <blockquote class="blockquote mb-0">
+                <div class="temp-results-two">
+                </div>
+              </blockquote>
+            </div>
+          </div>
+          <div class="col-sm-2">
+            <div class="card text-center p-3 ">
+              <blockquote class="blockquote mb-0">
+                <div class="temp-results-three">
+                </div>
+              </blockquote>
+            </div>
+          </div>
+          <div class="col-sm-2">
+            <div class="card text-center p-3 ">
+              <blockquote class="blockquote mb-0">
+                <div class="temp-results-four">
+                </div>
+              </blockquote>
+            </div>
+          </div>
+          <div class="col-sm-2">
+            <div class="card text-center p-3 ">
+              <blockquote class="blockquote mb-0">
+                <div class="temp-results-five">
+                </div>
+              </blockquote>
+            </div>
+          </div>
+          <!-- </div> -->
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- </section> -->
 
 
-<!-- <div class="container"> -->
+  <!-- <div class="container"> -->
   <!-- <div class="row">
     <div class="col-7">
       One of three columns
@@ -102,9 +125,9 @@
     </div>
   </div> -->
 
-<!-- </div> -->
+  <!-- </div> -->
 
-<!-- <section class="jumbotron">
+  <!-- <section class="jumbotron">
   
   <div class="container">
     <h2 class="city"></h2>
@@ -117,8 +140,9 @@
 </section> -->
 
 
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 </body>
 <script src='index.js'></script>
+
 </html>
