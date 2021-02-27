@@ -12,11 +12,16 @@ function weatherGenerator(city){
         console.log(response.list[2].main.temp)
         console.log(response.list[2].main.humidity)
 
-        var newcity = $("#button-addon2").val().trim()
-        console.log(newcity)
-        var citysearch = $(".Temp").text(response.list[0].main.temp)
-        var humiditysearch = $(".Humidity").text(response.list[0].main.humidity + '%')
-        var windspeed = $(".Wind-Speed").text(response.list[0].wind.speed)
+        var timeT = moment().format("MMM Do YY")
+        var currentWeather = response.list[0].weather[0].icon;
+        var currenticonurl = "http://openweathermap.org/img/w/" + currentWeather + ".png";
+        var currenticon = $("<img>").attr("src", currenticonurl)
+        var tempsearch = $(".Temp").text("Temperature:" + response.list[0].main.temp)
+        var humiditysearch = $(".Humidity").text("Humidity:" + response.list[0].main.humidity + '%')
+        var windspeed = $(".Wind-Speed").text("Wind Speed:" + response.list[0].wind.speed)
+        $("<p>").text(tempsearch, humiditysearch, windspeed)
+
+        $(".hello").append(timeT, currenticon)
         var time = moment().add(1, 'day').format('MMM Do YY');
         var timeOne = $("<p>").text(time)
         var temp = $("<p>").text("Temp:" + response.list[2].main.temp)
