@@ -12,7 +12,7 @@ function weatherGenerator(city){
         console.log(response.list[2].main.temp)
         console.log(response.list[2].main.humidity)
 
-        var time = moment().format("MMM Do YY");
+        var time = moment().add(1, 'day').format('MMM Do YY');
         var timeOne = $("<p>").text(time)
         var temp = $("<p>").text("Temp:" + response.list[2].main.temp)
         var humidity =  $("<p>").text("Humidity:" + response.list[2].main.humidity + '%')
@@ -22,8 +22,8 @@ function weatherGenerator(city){
         console.log(time)
         $(".temp-results-one").append(timeOne, IMGicon, temp, humidity);
 
-        // var time = moment().format("MMM Do YY");
-        // var timeOne = $("<p>").text(time)
+        var timeTwo = moment().add(2, 'day').format('MMM Do YY');
+        var timeThree = $("<p>").text(timeTwo)
         var tempTwo = $("<p>").text("Temp:" + response.list[10].main.temp)
         // console.log(response.list[0].main.temp)
         var humidityTwo =  $("<p>").text("Humidity:" + response.list[10].main.humidity + '%')
@@ -31,9 +31,10 @@ function weatherGenerator(city){
         var iconurlTwo = "http://openweathermap.org/img/w/" + iconcodeTwo + ".png";
         var IMGiconTwo = $("<img>").attr("src", iconurlTwo)
         // console.log(time)
-        $(".temp-results-two").append(IMGiconTwo, tempTwo, humidityTwo);
+        $(".temp-results-two").append(timeThree, IMGiconTwo, tempTwo, humidityTwo);
 
-
+        var timeFour = moment().add(3, 'day').format('MMM Do YY');
+        var timeFive = $("<p>").text(timeFour)
         var tempThree = $("<p>").text("Temp:" + response.list[18].main.temp)
         // console.log(response.list[0].main.temp)
         var humidityThree =  $("<p>").text("Humidity:" + response.list[18].main.humidity + '%')
@@ -41,8 +42,10 @@ function weatherGenerator(city){
         var iconurlThree = "http://openweathermap.org/img/w/" + iconcodeThree + ".png";
         var IMGiconThree = $("<img>").attr("src", iconurlThree)
         // console.log(time)
-        $(".temp-results-three").append(IMGiconThree, tempThree, humidityThree);
+        $(".temp-results-three").append(timeFive, IMGiconThree, tempThree, humidityThree);
 
+        var timeSix = moment().add(4, 'day').format('MMM Do YY');
+        var timeSeven = $("<p>").text(timeSix)
         var tempFour = $("<p>").text("Temp:" + response.list[26].main.temp)
         // console.log(response.list[0].main.temp)
         var humidityFour =  $("<p>").text("Humidity:" + response.list[26].main.humidity + '%')
@@ -50,8 +53,10 @@ function weatherGenerator(city){
         var iconurlFour = "http://openweathermap.org/img/w/" + iconcodeFour + ".png";
         var IMGiconFour = $("<img>").attr("src", iconurlFour)
         // console.log(time)
-        $(".temp-results-four").append(IMGiconFour, tempFour, humidityFour);
+        $(".temp-results-four").append(timeSeven, IMGiconFour, tempFour, humidityFour);
 
+        var timeEight = moment().add(5, 'day').format('MMM Do YY');
+        var timeNine = $("<p>").text(timeEight)
         var tempFive = $("<p>").text("Temp:" + response.list[34].main.temp)
         // console.log(response.list[0].main.temp)
         var humidityFive =  $("<p>").text("Humidity:" + response.list[34].main.humidity + '%')
@@ -59,59 +64,16 @@ function weatherGenerator(city){
         var iconurlFive = "http://openweathermap.org/img/w/" + iconcodeFive + ".png";
         var IMGiconFive = $("<img>").attr("src", iconurlFive)
         // console.log(time)
-        $(".temp-results-five").append(IMGiconFive, tempFive, humidityFive);
+        $(".temp-results-five").append(timeNine,IMGiconFive, tempFive, humidityFive);
 });
 
 }
 
+// $(".")
 
 weatherGenerator();
 
-function timeOne(){
-    const currentMoment = moment().add(0, 'days');
-const endMoment = moment().add(6, 'days');
-while (currentMoment.isBefore(endMoment, 'day')) {
-  console.log(`${currentMoment.format('l')}`);
-  currentMoment.add(1, 'days');
-}
-}
-timeOne()
-
-function daysOfWeek(){
-    var start = new Date();
-var end = new Date();
-
-
-var loop = new Date(start);
-while(loop <= end){
-   console.log(loop);           
-
-   var newDate = loop.setDate(loop.getDate() + 1);
-   loop = new Date(newDate);
-} 
-
-}
-
-daysOfWeek();
-
-var sec = 1614189600;
-var date = new Date(sec * 1000);
-var timestr = date.toLocaleTimeString();
-
-console.log(date, timestr);
-
-let unix_timestamp = 1614600000;
-// Create a new JavaScript Date object based on the timestamp
-// multiplied by 1000 so that the argument is in milliseconds, not seconds.
-var date = new Date(unix_timestamp * 1000);
-// Hours part from the timestamp
-var hours = date.getHours();
-// Minutes part from the timestamp
-var minutes = "0" + date.getMinutes();
-// Seconds part from the timestamp
-var seconds = "0" + date.getSeconds();
-
-// Will display time in 10:30:23 format
-var formattedTime = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
-
-console.log(formattedTime);
+var testOne = moment().add(1, 'day').format('L')
+var testTwo = moment().add(2, 'day').format('L')
+console.log(testOne, testTwo)
+var test = moment().format("MMM Do YY");
