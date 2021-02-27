@@ -1,8 +1,7 @@
 // var APIKEY = config.MY_KEY;
 function weatherGenerator(city){
     var APIKEY = '1b3cfcbab3962e57d2f22e946221f380';
-    var queryURLOne = "http://api.openweathermap.org/data/2.5/forecast?q=Chicago&units=imperial&cnt=50&appid=" + APIKEY;
-    var queryURLTwo = ""
+    var queryURLOne = "http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=imperial&cnt=50&appid=" + APIKEY;
     console.log(queryURLOne)
     $.ajax({
         url: queryURLOne,
@@ -11,7 +10,7 @@ function weatherGenerator(city){
         console.log(response.list[34])
         console.log(response.list[2].main.temp)
         console.log(response.list[2].main.humidity)
-
+        
         var timeT = moment().format("MMM Do YY")
         var currentWeather = response.list[0].weather[0].icon;
         var currenticonurl = "http://openweathermap.org/img/w/" + currentWeather + ".png";
@@ -79,12 +78,15 @@ function weatherGenerator(city){
 
 }
 
-// $("#button-addon2").on("click", weatherGenerator) 
-// {
-//   // event.preventDefault();
-// }
+$("#button-addon2").on("click", function(event) {
+  event.preventDefault();
 
-weatherGenerator();
+  var search = $("#search-field").val().trim()
+  weatherGenerator(search);
+})
+
+
+
 
 var testOne = moment().add(1, 'day').format('L')
 var testTwo = moment().add(2, 'day').format('L')
