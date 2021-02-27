@@ -12,6 +12,11 @@ function weatherGenerator(city){
         console.log(response.list[2].main.temp)
         console.log(response.list[2].main.humidity)
 
+        var newcity = $("#button-addon2").val().trim()
+        console.log(newcity)
+        var citysearch = $(".Temp").text(response.list[0].main.temp)
+        var humiditysearch = $(".Humidity").text(response.list[0].main.humidity + '%')
+        var windspeed = $(".Wind-Speed").text(response.list[0].wind.speed)
         var time = moment().add(1, 'day').format('MMM Do YY');
         var timeOne = $("<p>").text(time)
         var temp = $("<p>").text("Temp:" + response.list[2].main.temp)
@@ -69,7 +74,10 @@ function weatherGenerator(city){
 
 }
 
-// $(".")
+// $("#button-addon2").on("click", weatherGenerator) 
+// {
+//   // event.preventDefault();
+// }
 
 weatherGenerator();
 
