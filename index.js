@@ -18,7 +18,7 @@ function weatherGenerator(city){
         var tempsearch = $(".Temp").text("Temperature:" + response.list[0].main.temp)
         var humiditysearch = $(".Humidity").text("Humidity:" + response.list[0].main.humidity + '%')
         var windspeed = $(".Wind-Speed").text("Wind Speed:" + response.list[0].wind.speed)
-        $("<p>").text(tempsearch, humiditysearch, windspeed)
+        var empty = $("<p>").text(tempsearch, humiditysearch, windspeed)
 
         $(".hello").append(timeT, currenticon)
         var time = moment().add(1, 'day').format('MMM Do YY');
@@ -29,7 +29,7 @@ function weatherGenerator(city){
         var iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
         var IMGicon = $("<img>").attr("src", iconurl)
         console.log(time)
-        $(".temp-results-one").append(timeOne, IMGicon, temp, humidity);
+        var emptyOne = $(".temp-results-one").append(timeOne, IMGicon, temp, humidity);
 
         var timeTwo = moment().add(2, 'day').format('MMM Do YY');
         var timeThree = $("<p>").text(timeTwo)
@@ -40,7 +40,7 @@ function weatherGenerator(city){
         var iconurlTwo = "http://openweathermap.org/img/w/" + iconcodeTwo + ".png";
         var IMGiconTwo = $("<img>").attr("src", iconurlTwo)
         // console.log(time)
-        $(".temp-results-two").append(timeThree, IMGiconTwo, tempTwo, humidityTwo);
+        var emptyTwo = $(".temp-results-two").append(timeThree, IMGiconTwo, tempTwo, humidityTwo);
 
         var timeFour = moment().add(3, 'day').format('MMM Do YY');
         var timeFive = $("<p>").text(timeFour)
@@ -51,8 +51,8 @@ function weatherGenerator(city){
         var iconurlThree = "http://openweathermap.org/img/w/" + iconcodeThree + ".png";
         var IMGiconThree = $("<img>").attr("src", iconurlThree)
         // console.log(time)
-        $(".temp-results-three").append(timeFive, IMGiconThree, tempThree, humidityThree);
-
+        var emptyThree = $(".temp-results-three").append(timeFive, IMGiconThree, tempThree, humidityThree);
+        
         var timeSix = moment().add(4, 'day').format('MMM Do YY');
         var timeSeven = $("<p>").text(timeSix)
         var tempFour = $("<p>").text("Temp:" + response.list[26].main.temp)
@@ -62,7 +62,7 @@ function weatherGenerator(city){
         var iconurlFour = "http://openweathermap.org/img/w/" + iconcodeFour + ".png";
         var IMGiconFour = $("<img>").attr("src", iconurlFour)
         // console.log(time)
-        $(".temp-results-four").append(timeSeven, IMGiconFour, tempFour, humidityFour);
+        var emptyFour = $(".temp-results-four").append(timeSeven, IMGiconFour, tempFour, humidityFour);
 
         var timeEight = moment().add(5, 'day').format('MMM Do YY');
         var timeNine = $("<p>").text(timeEight)
@@ -73,19 +73,42 @@ function weatherGenerator(city){
         var iconurlFive = "http://openweathermap.org/img/w/" + iconcodeFive + ".png";
         var IMGiconFive = $("<img>").attr("src", iconurlFive)
         // console.log(time)
-        $(".temp-results-five").append(timeNine,IMGiconFive, tempFive, humidityFive);
+        var emptyFive = $(".temp-results-five").append(timeNine,IMGiconFive, tempFive, humidityFive);
 });
 
 }
+
+
 
 $("#button-addon2").on("click", function(event) {
   event.preventDefault();
 
   var search = $("#search-field").val().trim()
-  weatherGenerator(search);
+  $(".hello").append(search)
+
+
+
+  var searchTwo = $('.list-group')
+  var searchbutton = $("<li>").addClass("btn list-group-item")
+  searchbutton.append(search)
+  searchTwo.append(searchbutton)
+  weatherGenerator(search)
+
+  
+
 })
-
-
+function clear() {
+  $(".hello").empty();
+  $(".temp-results-one").empty();
+  $(".temp-results-two").empty();
+  $(".temp-results-three").empty();
+  $(".temp-results-four").empty();
+  $(".temp-results-five").empty();
+  $(".Temp").empty();
+  $(".Humidity").empty();
+  $(".Wind-Speed").empty();
+}
+$("#clear").on("click", clear);
 
 
 var testOne = moment().add(1, 'day').format('L')
